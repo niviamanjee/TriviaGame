@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advanced Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="../TriviaGame/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../TriviaGame/assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-inline-flex p-2 bd-highlight"> New Girl Trivia Game </div>
+        <button id="start"> Start! </button>
+        <div class="question-box">
+            <h3> Question: <span id="question"> </span></h3>
+            <h4> Time Remaining: <span id="time-remaining"> </span></h4>
+            <div id="answer-choices">
+                <ul class="answer-buttons">
+                    <li> <button> choice 1 </button></li>
+                    <li> <button> choice 2 </button></li>
+                    <li> <button> choice 3 </button></li>
+                    <li> <button> choice 4 </button></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="./assets/javascript/game.js"></script>
+</body>
+
+</html>
