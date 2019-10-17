@@ -27,6 +27,7 @@ body {
     display: flex;
     align-content: flex-end;
     flex-direction: column; 
+    justify-content: space-between;
     text-align: center;
     background-color: #ffffff80;
     z-index: 1;
@@ -34,9 +35,19 @@ body {
     border: 3px solid black;
 }
 #answer-choices {
-    text-align: left;
+    /* text-align: left; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     margin-left: 5%;
     margin-bottom: 2%;
+}
+.answer-buttons {
+    width: 450px;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+}
+.quest {
+    align-content: space-between;
 }
