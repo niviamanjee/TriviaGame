@@ -23,6 +23,10 @@ body {
 .start {
     align-content: center;
 }
+
+.container {
+    align-items: center;
+}
 .question-box {
     display: flex;
     align-content: flex-end;

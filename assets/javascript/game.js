@@ -9,7 +9,7 @@ var q = [
     },
     {
         question: "What did Cece call her modeling business?",
-        answers: ["The Hot Shots", "", "Parikh Models", "Cece's Boys"],
+        answers: ["The Hot Shots", "Cece's Models", "Parikh Models", "Cece's Boys"],
         right: "Cece's Boys",
     },
     {
@@ -22,6 +22,36 @@ var q = [
         answers: ["his ex girlfriend", "Nick", "his chiropractor", "his mom"],
         right: "his mom",
     },
+    {
+        question: "What shape did Nick's bar crawl route make on the map?",
+        answers: ["hat", "smiley face", "jellyfish", "Pacman"],
+        right: "smiley face",
+    },
+    {
+        question: "What was the clothing invention that Nick and Schmidt came up with?",
+        answers: ["swuit", "scacket", "pajirt", "glatch"],
+        right: "swuit",
+    },
+    {
+        question: "Where do Nick and Jess flee to when they first start dating?",
+        answers: ["Canada", "Florida", "Mexico", "Texas"],
+        right: "Mexico",
+    },
+    {
+        question: "What did Cece and Schmidt name the house they bought together?",
+        answers: ["The Main Loft", "Jaipur Aviv", "Schmece's Crib", "Pleasure Pad"],
+        right: "Jaipur Aviv",
+    },
+    {
+        question: "What is the name of Nick's friend from the park",
+        answers: ["Joey", "Bob", "Tran", "Bearclaw"],
+        right: "Tran",
+    },
+    {
+        question: "Who ends up getting the parking spot that the loft members fight for?",
+        answers: ["Nick", "Jess", "Schmidt", "Winston"],
+        right: "Winston",
+    }
 ]
 
 var indexUsed = [];
@@ -30,18 +60,6 @@ var correctAnswers = 0;
 var incorrectAnswers = 0;
 var noAnswers = 0;
 
-//q[0].question
-//q[0].answers[0]
-//q[0].right
-
-// var questions = [
-//     "What is the name of Winston's cat?" ,
-//     "",
-//     "",
-//     "",
-// ]
-//each array of questions has an array of answers(maybe an array of objects?)
-//var of time count-down 
 var intervalId;
 var clockRunning = false;
 var time = 30;
@@ -50,8 +68,8 @@ function resetClock() {
     console.log(time);
     clearInterval(intervalId);
     clockRunning = false;
-    time = 30
-    $("#time-remaining").text("30 seconds");
+    time = 20
+    $("#time-remaining").text("20 seconds");
     if (!clockRunning) {
         intervalId = setInterval(count, 1000);
         clockRunning = true;
@@ -80,15 +98,16 @@ function reset(text) {
 }
 
 function results() {
-    $(".question-box").empty().append("<p> Correct Answers: " + correctAnswers + "Incorrect Answers: "
-        + incorrectAnswers + "Unanswered Questions: " + noAnswers)
+    $(".question-box").empty().append("<h3> Game Over! </h3>" + "<br>" + "<p> Correct Answers: " + correctAnswers + "</p>" + "Incorrect Answers: "
+        + incorrectAnswers + "</p>" + "Unanswered Questions: " + noAnswers + "</p>")
 }
 
 
 function setQuestion() {
+
     if (indexUsed.length === q.length) {
 
-        // go to results
+        results();
     }
     else {
         resetClock();
@@ -108,7 +127,9 @@ function setQuestion() {
         //need build the buttons // loop
         $(".answer-buttons").empty()
         for (var i = 0; i < q[index].answers.length; i++) {
-            $(".answer-buttons").append(`<button class="quest" index= ${index} value=${q[index].answers[i]}>${q[index].answers[i]}</button>`)
+            var buttons = $("<button>").addClass("quest").val(q[index].answers[i]).attr("index", index).text(q[index].answers[i]);
+            $(".answer-buttons").append(buttons);
+
             // $(".answer-buttons").append("<button index=" + index + "value=" + q[index].answers[i] + ">" + q[index].answers[i] + "</button>")
         }
         $(".quest").on("click", function () {
@@ -130,6 +151,7 @@ function setQuestion() {
         })
     }
 }
+
 //$("#start").on("click", resetClock);
 $("#start").on("click", setQuestion);
 
