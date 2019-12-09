@@ -52,6 +52,13 @@ body {
     /* justify-content: center; */
     justify-content: space-between;
 }
+
+.answer-buttons p {
+    margin-right: 30%;
+    margin-left: 30%;
+    font-size: 120%;
+
+}
 .quest {
     align-content: space-between;
 }
